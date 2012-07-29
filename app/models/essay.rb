@@ -1,7 +1,26 @@
 class Essay < ActiveRecord::Base
   PHOTO_COUNT = 10
 
-  attr_accessible :description, :title, :photo_1_caption, :photo_2_caption, :photo_3_caption, :photo_4_caption, :photo_5_caption, :photo_6_caption, :photo_7_caption, :photo_8_caption, :photo_9_caption, :photo_10_caption, :photo_1, :photo_2, :photo_3, :photo_4, :photo_5, :photo_6, :photo_7, :photo_8, :photo_9, :photo_10, :lat, :lng, :needs, :location, :map_zoom_level
+  attr_accessible :description, 
+    :title, 
+    :photo_1_caption, 
+    :photo_2_caption, 
+    :photo_3_caption, 
+    :photo_4_caption, 
+    :photo_5_caption, 
+    :photo_6_caption, 
+    :photo_7_caption, 
+    :photo_8_caption, 
+    :photo_9_caption, 
+    :photo_10_caption, 
+    :photo_1, :photo_2, 
+    :photo_3, :photo_4, 
+    :photo_5, :photo_6, 
+    :photo_7, :photo_8, 
+    :photo_9, :photo_10, 
+    :lat, :lng, :needs, 
+    :location, :map_zoom_level,
+    :contact, :name
 
   validates_presence_of :title, :location, :needs
 
@@ -27,7 +46,13 @@ class Essay < ActiveRecord::Base
       photo = self.send("photo_#{x}")
       next if photo.blank?
       url = options[:size] ? photo.send(options[:size]).url : photo.url
-      photos << { :url => url, :caption => self.read_attribute("photo_#{x}_caption") }
+      photos << { 
+        :url => url, 
+        :caption => self.read_attribute("photo_#{x}_caption"), 
+        "original" => photo.url,
+        "small" => photo.send('small').url, 
+        "thumb" => photo.send('thumb').url 
+      }
     end
 
     photos

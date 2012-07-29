@@ -7,6 +7,8 @@ gem 'rails', '3.2.6'
 
 group :development, :test do
   gem 'sqlite3'
+  gem 'execjs'
+  gem 'therubyracer', :platforms => :ruby
 end
 
 group :production do

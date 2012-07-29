@@ -1,4 +1,25 @@
-body { margin-top: 5px; }
+body { 
+  color : #442D11;
+  background-color: #F3EFE7;
+}
+header {
+  margin-top : 0px;
+}
+header span:first-child {
+  width : 50%;
+}
+header span {
+  height : 1em;
+  display : inline-block;
+  width : 25%;
+  float : left;
+}
+hr {
+  background-color : #E5DBCB;
+  height : .5em;
+  border-top : none;
+  border-bottom : none;
+}
 .field_with_errors { display: inline-block; background-color: #fee; }
 #photo .photo { width: 100% }
 .centered { text-align: center; }
@@ -14,6 +35,17 @@ body { margin-top: 5px; }
   a.btn { margin-top: 50px; }
 }
 
+.orange {
+  background-color : #DE611A;
+}
+
+.blue {
+  background-color : #30B1DF;
+}
+
+.green {
+  background-color : #BEBE63;
+}
 
 .yui3-aclist-item-active {
   background: #2647A0;
@@ -37,4 +69,44 @@ body { margin-top: 5px; }
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.58);
 }
 
-#map-image { float: right; }
+#map-image { 
+  float: right;
+  width: 33em; 
+}
+
+#map-image img {
+  width: 33em;
+}
+
+ol.photos {
+  position : relative;
+  padding-left : 30em;
+  width : 33em;
+  overflow:auto;
+}
+
+li.photo:first-child {
+  position : absolute;
+  top: 0em;
+  width : 30em;
+  max-width : 30em;
+  left : -0.5em;
+}
+
+li.photo:first-child img{
+  width : 30em;
+}
+
+li.photo {
+  list-style-type : none;
+  float : left;
+  max-width : 10em;
+  padding : .15em;
+}
+
+input, textarea {
+  min-width : 30em;
+  -webkit-box-shadow : 0px 2px 1px rgba(0,0,0,0.4) !important; 
+  box-shadow : 0px 2px 1px rgba(0,0,0,0.4);
+  border-radius : 3px;
+}

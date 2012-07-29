@@ -24,6 +24,6 @@
 
 <script type="text/javascript">
 YUI().use('node', function (Y) {
-  window.PhotoBrowser(<%= @essay.photos(thumb: false).to_json.html_safe %>);
+  window.PhotoBrowser(<%= @essay.photos(thumb: true).to_json.html_safe %>);
 });
 </script>
