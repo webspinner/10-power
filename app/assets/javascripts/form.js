@@ -1,6 +1,8 @@
 YUI().use('autocomplete', function (Y) {
     var acNode = Y.one('#essay_location');
-
+    if(!acNode){
+        return;
+    }
     acNode.plug(Y.Plugin.AutoComplete, {
         // Highlight the first result of the list.
         activateFirstItem: true,
@@ -96,11 +98,15 @@ YUI().use('autocomplete', function (Y) {
         Y.one('#essay_lat').set('value', location.lat);
         Y.one('#essay_lng').set('value', location.lng);
         Y.one('#essay_map_zoom_level').set('value', zoom);
-        Y.one('#map-image img').set('src', 'http://maps.googleapis.com/maps/api/staticmap?center=' + location.lat + ',' + location.lng + '&zoom=' + zoom + '&size=300x200&sensor=false').show();
+        Y.one('#map-image img').set('src', 'http://maps.googleapis.com/maps/api/staticmap?center=' + location.lat + ',' + location.lng + '&zoom=' + zoom + '&size=390x390&sensor=false').show();
     });
 });
 
 YUI().use("sortable", function(Y){
+    var photos = Y.one(".sorts.photos");
+    if ( !photos ){
+        return;
+    }
     var sortable = new Y.Sortable({
         container: '.sorts.photos',
         nodes: 'li',

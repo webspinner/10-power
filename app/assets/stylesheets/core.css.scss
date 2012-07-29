@@ -70,19 +70,16 @@ hr {
 }
 
 #map-image { 
+  position: relative;
   float: right;
-  width: 33em; 
-}
-
-#map-image img {
-  width: 33em;
+  right : 50px; 
 }
 
 ol.photos {
   position : relative;
-  padding-left : 30em;
+  padding-left : 36em;
   width : 33em;
-  overflow:auto;
+  overflow:hidden;
 }
 
 li.photo:first-child {
@@ -95,16 +92,19 @@ li.photo:first-child {
 
 li.photo:first-child img{
   width : 30em;
+  vertical-align: middle;
 }
 
 li.photo {
+  position : relative;
   list-style-type : none;
   float : left;
   max-width : 10em;
+  height : 10em;
   padding : .15em;
 }
 
-input, textarea {
+input[type=text], textarea {
   min-width : 30em;
   -webkit-box-shadow : 0px 2px 1px rgba(0,0,0,0.4) !important; 
   box-shadow : 0px 2px 1px rgba(0,0,0,0.4);

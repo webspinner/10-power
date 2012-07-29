@@ -6,18 +6,18 @@
     <% end %>
   <% end %>
 
-  <div id="map-image">
-    <% if @essay.lat && @essay.lng %>
-      <%= map_image_tag @essay, 300, 200, 8 %>
-    <% else %>
-    <img />
-    <% end %>
-  </div>
-
-  <%= f.hidden_field :lat %>
-  <%= f.hidden_field :lng %>
-  <%= f.hidden_field :map_zoom_level %>
   <div class="entry-fields">
+    <div id="map-image">
+      <% if @essay.lat && @essay.lng %>
+        <%= map_image_tag @essay, 390, 390, 8 %>
+      <% else %>
+      <img />
+      <% end %>
+    </div>
+
+    <%= f.hidden_field :lat %>
+    <%= f.hidden_field :lng %>
+    <%= f.hidden_field :map_zoom_level %>
     <div><%= f.text_field :title, :placeholder => 'Title' %></div>
     <div><%= f.text_field :location, :placeholder => 'Location' %></div>
     <div><%= f.text_area :description, :rows => 3, :placeholder => 'Description' %></div>
@@ -33,7 +33,9 @@
             <%= image_tag @essay.photos()[x]["original"] %>
           <% else %>
             <%= image_tag @essay.photos()[x]["small"] %>
-          <% end %>
+          <% end %>          
+        <% else %>
+          <span class="addphoto">Upload Photo</span>
         <% end %>  
         <div class="tooltip">
           <%= f.file_field "photo_#{y}" %>

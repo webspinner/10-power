@@ -1,3 +1,37 @@
 // Place all the styles related to the essays controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.addphoto {
+	display : block;
+	float : left;
+	height : 10em;
+	width : 10em;
+	background-color : #e0e0e0;
+	background-image : url(WhiteCamera.png);
+	background-repeat : no-repeat;
+	background-position : center;
+	text-indent : -9999px;
+}
+
+input[type=file] {
+	display : block;
+	height : 10em;
+	width : 10em;
+	min-width: 10em;
+}
+
+.entry-fields {
+	margin-left : 25px;
+	min-height : 390px;
+}
+
+textarea {
+	height : 95px;
+}
+.tooltip {
+	top: 0px;
+	max-width : 10em;
+	max-height: 10em;
+	overflow : hidden;
+}
