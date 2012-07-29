@@ -15,6 +15,7 @@
 }
 
 input[type=file] {
+	opacity : 0;
 	display : block;
 	height : 10em;
 	width : 10em;
@@ -30,8 +31,23 @@ textarea {
 	height : 95px;
 }
 .tooltip {
+	background-color : rgba(255,255,255,0.5);
+	background-image : url(WhiteCamera.png);
+	background-repeat : no-repeat;
+	background-position : center;
 	top: 0px;
-	max-width : 10em;
-	max-height: 10em;
+	max-width : 11.5em;
+	max-height: 11.5em;
 	overflow : hidden;
+}
+
+.tooltip input[type=text] {
+	position : absolute;
+	bottom : 0px;
+	width : 8.5em;
+	min-width: 8.5em;
+}
+
+li.photo:hover .tooltip {
+	opacity : 1;
 }
