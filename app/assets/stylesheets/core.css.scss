@@ -95,6 +95,16 @@ li.photo:first-child img{
   vertical-align: middle;
 }
 
+li.photo:first-child input[type=file] {
+  width: 30em;
+  height : 30em;
+}
+
+li.photo:first-child .tooltip {
+  min-height : 34em;
+  min-width: 34em;
+}
+
 li.photo {
   position : relative;
   list-style-type : none;
